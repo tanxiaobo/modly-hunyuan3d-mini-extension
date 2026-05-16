@@ -71,7 +71,7 @@ ARM64_CU128_WHEELS = {
 def pip(venv: Path, *args: str) -> None:
     is_win = platform.system() == "Windows"
     pip_exe = venv / ("Scripts/pip.exe" if is_win else "bin/pip")
-    subprocess.run([str(pip_exe), *args], check=True)
+    subprocess.run([str(pip_exe), *args, "-i https://pypi.tuna.tsinghua.edu.cn/simple/"], check=True)
 
 
 def python_tag(venv: Path) -> str:
